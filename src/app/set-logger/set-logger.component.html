@@ -1,0 +1,45 @@
+<div class="form-container">
+  <p>
+    <mat-form-field class="input" appearance="outline">
+      <mat-label>Select a Compound</mat-label>
+      <mat-select required [(ngModel)]="compounds">
+        <mat-option label="" selected></mat-option>
+        <mat-option *ngFor="let compound of model.compounds" [value]="compound">
+          {{compound}} 
+        </mat-option>
+      </mat-select>
+      </mat-form-field>
+  </p>
+  <div class="form-box">
+    <p>
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>How many sets?</mat-label>
+        <input  matInput [(ngModel)]="model.sets" type="number">
+        <mat-hint>Total sets:</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>How many reps?</mat-label>
+        <input  matInput [(ngModel)]="model.reps" type="number">
+        <mat-hint>Total reps:</mat-hint>
+      </mat-form-field>
+    </p>
+
+  </div>
+  <p>
+    <mat-form-field class="input" appearance="outline">
+      <mat-label>How much weight?</mat-label>
+      <input  matInput [(ngModel)]="model.weight" type="number">
+      <mat-hint>Total weight:</mat-hint>
+    </mat-form-field>
+  </p>
+
+  <div class="form-box">
+    <button mat-raised-button (click)="submit()" color="primary">Submit</button>
+    <!-- <button mat-raised-button (click)="reset()" color="warn">Reset</button> -->
+  </div>
+  <div class="form-box">
+<!-- Use the "form-box" class to place inputs on the same line. -->
+</div>
+</div>
