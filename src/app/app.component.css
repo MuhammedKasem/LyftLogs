@@ -3,7 +3,11 @@
   color: aqua;
   font-size: 80px;
   margin-top: 70px;
+
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
+
 
 
 .form-container {
@@ -21,6 +25,7 @@
 .full-width {
   width: 200px;
 }
+
 button {
   margin: 8px;
 }

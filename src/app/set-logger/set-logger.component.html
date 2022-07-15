@@ -2,9 +2,9 @@
   <p>
     <mat-form-field class="input" appearance="outline">
       <mat-label>Select a Compound</mat-label>
-      <mat-select required [(ngModel)]="compounds">
+      <mat-select required [(ngModel)]="model.compound">
         <mat-option label="" selected></mat-option>
-        <mat-option *ngFor="let compound of model.compounds" [value]="compound">
+        <mat-option *ngFor="let compound of compounds" [value]="compound">
           {{compound}} 
         </mat-option>
       </mat-select>

@@ -9,15 +9,18 @@ import LiftLog from '../models/liftlog.interface';
 })
 export class ExcerciseViewComponent implements OnInit {
   dataSource: LiftLog[] = [];
-  displayedColumns = ['sets', 'weight', 'reps', 'compounds']
+  displayedColumns = ['compounds', 'sets', 'reps', 'weight']
 
-  constructor(private dataService: DataService) {
-    if(this.dataService.getData()) {
+  constructor(public dataService: DataService) {
+    if(this.dataService.getData() != null) {
       this.dataSource = this.dataService.getData();
+
     }
   }
+  
 
   ngOnInit(): void {
   }
+
 
 }

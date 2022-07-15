@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { ExcerciseViewComponent } from './excercise-view/excercise-view.component';
 import { MatTableModule } from '@angular/material/table'  
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MatTableModule } from '@angular/material/table'
     AppComponent,
     SetLoggerComponent,
     ExcerciseViewComponent,
+
   ],
   imports: [
     MatSelectModule,
@@ -38,6 +40,7 @@ import { MatTableModule } from '@angular/material/table'
     CommonModule,
     MatTabsModule,
     MatTableModule,
+    MatIconModule
 
   ],
   providers: [],

@@ -1,5 +1,5 @@
 interface LiftLog {
-  compounds?: string[],
+  compound?: string,
   sets?: number,
   reps?: number,
   weight?: number,

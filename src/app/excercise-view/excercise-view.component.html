@@ -1,6 +1,14 @@
+<h1 class="mainheading">Logged Sets</h1>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="compounds">
+    <th mat-header-cell *matHeaderCellDef> Compounds </th>
+    <td mat-cell *matCellDef="let element"> {{element.compound}} </td>
+  </ng-container>
 
   <!-- Position Column -->
   <ng-container matColumnDef="sets">
@@ -9,10 +17,11 @@
   </ng-container>
 
   <!-- Position Column -->
-  <ng-container matColumnDef="compounds">
-    <th mat-header-cell *matHeaderCellDef> Compounds </th>
-    <td mat-cell *matCellDef="let element"> {{element.compounds[0]}} </td>
+  <ng-container matColumnDef="reps">  
+    <th mat-header-cell *matHeaderCellDef> Reps </th>
+    <td mat-cell *matCellDef="let element"> {{element.reps}} </td>
   </ng-container>
+
 
   <!-- Position Column -->
   <ng-container matColumnDef="weight">
@@ -20,12 +29,13 @@
     <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
   </ng-container>
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="reps">
-    <th mat-header-cell *matHeaderCellDef> Reps </th>
-    <td mat-cell *matCellDef="let element"> {{element.reps}} </td>
-  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="form-container">
+  <button class="deleteButton" mat-fab color="primary" (click)="dataService.removeData()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

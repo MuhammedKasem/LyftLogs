@@ -9,13 +9,13 @@ import LiftLog from '../models/liftlog.interface';
 })
 export class SetLoggerComponent implements OnInit {
 
-  compounds: string[] = ['Squat', 'Bench', 'Deadlift']
+  compounds = ['Squat', 'Bench', 'Deadlift']
 
   model: LiftLog = {
-    compounds: this.compounds,
-    sets: null,
-    reps: null,
-    weight: null
+    compound: null,
+    sets: 0,
+    reps: 0,
+    weight: 0
   }
 
   loggedSet: LiftLog[] = [] //empty array that holds the type 'LiftLog'
@@ -23,8 +23,8 @@ export class SetLoggerComponent implements OnInit {
   submit() {
     this.loggedSet.push(this.model) //Pushing the users input as a model to the loggedSet
     console.log(this.model)
-
     this.dataService.saveData(this.loggedSet)
+    console.log('yo' + this.loggedSet)
   }
 
 
